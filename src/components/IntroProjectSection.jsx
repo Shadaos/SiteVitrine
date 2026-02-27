@@ -9,10 +9,8 @@ export const IntroProjectSection = () => {
         <div className="space-y-6">
           {/*Name*/}
 
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            <span className="opacity-0 animate-fade-in">Hi, I'm </span>
-            <span className="text-primary opacity-0 animate-fade-in-delay-1">Aurélien </span>
-            <span className="text-primary ml-2 opacity-0 animate-fade-in-delay-2">Beauchef </span>
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-center">
+            <span className="opacity-0 animate-fade-in">Here, There is all the projects in which I have worked </span>
           </h1>
 
         </div>

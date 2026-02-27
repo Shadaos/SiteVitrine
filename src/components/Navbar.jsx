@@ -13,6 +13,11 @@ export const Navbar = ({ items = [] }) => {
   const [selectedTab, setSelectedTab] = useState(items[0])
   const isClickingRef = useRef(false)
   const clickTimeoutRef = useRef(null)
+  const language = {
+    en: {nativeName : "English"},
+    fr: {nativeName : "Français"},
+  }
+const [isOpen, setIsOpen] = useState(false)
 
   /* -------------------------------- scroll shadow */
   useEffect(() => {
@@ -36,13 +41,13 @@ export const Navbar = ({ items = [] }) => {
 
       const observer = new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting && !isClickingRef.current) {
+          if (entry.isIntersecting && !isClickingRef.current && entry.intersectionRatio > 0.10) {
             setSelectedTab(item)
           }
         },
         {
 //          root: null,
-          threshold: 0.55, // % visible pour activer
+          threshold: 0.10, // % visible pour activer
         },
       )
 
@@ -63,14 +68,14 @@ export const Navbar = ({ items = [] }) => {
     clearTimeout(clickTimeoutRef.current)
     clickTimeoutRef.current = setTimeout(() => {
       isClickingRef.current = false
-    }, 700) // durée du scroll vers l'ancre
+    }, 1500) // durée du scroll vers l'ancre
   }
   return (
     <nav
       className={cn(
-        "fixed w-full z-40 transition-all duration-300  bg-background/50 backdrop-blur-md shadow-xs",
+        "fixed w-full z-40 transition-all duration-300  bg-background/50 ",
         isScrolled
-          ? "py-3 bg-background/80 backdrop-blur-md shadow-xs"
+          ? "py-3 bg-background/80 "
           : "py-5",
       )}
     >
@@ -86,7 +91,7 @@ export const Navbar = ({ items = [] }) => {
                       <span className="text-glow text-foreground">Home</span>{" "}
           </MotionA>
         </span>
-        {/* Desktop nav */}
+        {/* Desktop nav 
         <div className="hidden md:flex space-x-8">
           {items.map((item, key) => (
             <MotionA
@@ -110,11 +115,12 @@ export const Navbar = ({ items = [] }) => {
             </MotionA>
           ))}
         </div>
-        {/* mobile nav */}
-
+        */}
+        {/* mobile nav  md:hidden */}
+{/*
         <button
           onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="md:hidden p-2 text-foreground z-50"
+          className="md:block p-2 text-foreground z-50"
           aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}{" "}
@@ -123,7 +129,7 @@ export const Navbar = ({ items = [] }) => {
         <div
           className={cn(
             "fixed inset-0 bg-background/95 backdroup-blur-md z-40 flex flex-col items-center justify-center",
-            "transition-all duration-300 md:hidden",
+            "transition-all duration-300 md:block",
             isMenuOpen
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none",
@@ -144,6 +150,93 @@ export const Navbar = ({ items = [] }) => {
             ))}
           </div>
         </div>
+
+*/}
+      {/* Desktop Nav */}
+      <div className="hidden md:flex items-center space-x-8">
+        <div
+          className="relative"
+          onMouseEnter={() => setIsOpen(true)}
+          onMouseLeave={() => setIsOpen(false)}
+        >
+          <button className="text-foreground hover:text-primary transition">
+            Menu
+          </button>
+
+          {/* Dropdown */}
+          <div
+            className={`
+              absolute left-0 mt-4 w-[600px]
+              bg-background border rounded-xl shadow-lg
+              transition-all duration-200
+              ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}
+            `}
+          >
+            <div className="grid grid-cols-3 gap-6 p-6">
+              {items.map((item, key) => (
+                <a
+                  key={key}
+                  href={item.href}
+                  className="text-foreground/80 hover:text-primary transition-colors"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Nav */}
+              <button
+          onClick={() => setIsMenuOpen((prev) => !prev)}
+          className="md:hidden p-2 text-foreground z-50"
+          aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+        >
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}{" "}
+        </button>
+                <div
+          className={cn(
+            "fixed inset-0 bg-background/95 backdroup-blur-md z-40 flex flex-col items-center justify-center",
+            "transition-all duration-300 md:block",
+            isMenuOpen
+              ? "opacity-100 pointer-events-auto"
+              : "opacity-0 pointer-events-none",
+          )}
+        >
+
+<div className="flex flex-col space-y-8 text-xl">
+            {items.map((item, key) => (
+              <a
+                key={key}
+                href={item.href}
+                className="text-foreground/80 hover:text-primary transition-colors duration-300 "
+                onClick={() => { 
+                  handleNavClick(item)
+                  setIsMenuOpen(false)}}
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
+          </div>
+
+          {/*
+      <div className="md:hidden flex flex-col space-y-4 mt-4">
+        {items.map((item, key) => (
+          <a
+            key={key}
+            href={item.href}
+            className="text-foreground/80 hover:text-primary transition-colors"
+          >
+            {item.name}
+          </a>
+        ))}
+      </div>
+*/
+          }
+
+
       </div>
     </nav>
   )

@@ -104,6 +104,12 @@
     
 }
 
+.icon-wrapper {
+  background: var(--text-main);
+  border-radius: 30px;
+  padding: 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
 
 
 .liste {
@@ -133,8 +139,54 @@
   font-style: italic;
 }
 
-.title-cg:hover {
+.title-cg:hover{
   color: gold;
+}
+
+.title-csite {
+  font-style: italic;
+}
+.title-csite:has(+ .title-csite:hover),
+.title-csite:hover,
+.title-csite:hover + .title-csite  {
+  color: gold;
+}
+
+/* Meilleure solution */
+.linked-group:hover .linked {
+  color: red;
+}
+
+.title-ct {
+  font-style: italic;
+}
+
+.title-ct:hover {
+  color: #37185B;
+}
+
+.title-cc {
+  font-style: italic;
+}
+.title-cc:hover {
+  background: linear-gradient(to right, #9BBF58, #FFCC23, #BB227F, #FE5051, #6C8DEC, #FE5051);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-size: 40px;
+}
+
+.title-tf {
+  font-style: italic;
+}
+.title-tf:hover {
+  background: linear-gradient(to right, #322B59, #322B59, #359EDD, #92C8F1, #D2ECFD);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-size: 40px;
 }
 
   * {
@@ -197,6 +249,11 @@ margin: auto;
   hover:scale-105 active:scale-95;
 }
 
+@utility animation-button {
+  @apply transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
+  hover:scale-105 active:scale-95;
+ }
+
 @utility star {
   @apply absolute rounded-full bg-white;
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
@@ -205,6 +262,24 @@ margin: auto;
 @utility meteor {
   @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full;
   box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+}
+
+@font-face {
+  font-family: 'Chella_Bold';
+  src: url('./fonts/Chella_Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Juno_Black';
+  src: url('./fonts/juno-black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --font-Chella: 'Chella_Bold', sans-serif;
+  --font-Juno: 'Juno_Black', sans-serif;
 }
 
 #root {

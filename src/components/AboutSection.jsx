@@ -35,13 +35,20 @@ export const AboutSection = () => {
               zldbdkezjhbfkjezhbfkjhezbfkjhbezkrhfbjz
             </p>
 
-            <div className="flex flex-col sm:flew-row gap-4 pt-4 justify-center">
+            <div className="flex flex-col sm:flew-row gap-4 pt-4 justify-center text-center">
               <a href="https://www.linkedin.com/in/aur%C3%A9lien-beauchef/" className="cosmic-button" target="_blank" rel="noopener noreferrer">
               Get In Touch
           </a>
-              <button onClick={onButtonDowloadCVClick} className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300">
+              <button onClick={onButtonDowloadCVClick} className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300 animation-button">
                 Download CV
               </button>
+
+            <div className="flex flex-col sm:flew-row justify-center sm:flew-row text-primary text-center">
+              <a href="https://github.com/Shadaos" className="cosmic-button" target="_blank" rel="noopener noreferrer">
+              Link to my Github
+          </a>
+            </div>
+
 
             </div>
           </div>

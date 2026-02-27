@@ -1,0 +1,32 @@
+{
+"Cg_Title" : "CoachGuitar ",
+"Cg_Description" : "est l'application principal de Manomaya, avec plus de 20 millions de téléchargements",
+"Cg_Resume" : "La création du module cursus a été un vrai défi",
+
+"" : "",
+"" : "",
+"" : "",
+"" : "",
+
+"Cg_TideFlow_description_1" : "La creation de cette application de marées m'a permit de pouvoir travailler avec une base de données externes consequente et gérer les aléas de cette contrainte.Il a fallut communiquer de manière claire et preciser des besoin requis ainsi que des possible modifications avec le prestataire.",
+"Cg_TideFlow_description_2":"Et lorsque ce ne fut pas possible, rechercher des solutions alternatives ou la possibilité de créer une api interne.J'ai utilisé l'api d'Apple afin de récupérer les informations manquante et marge les datas afin d'avoir un rendu le plus précis possible",
+
+"Cg_Chords_Title" : "CoachChords",
+"Cg_Chords_description" : "La creation d'une application de catalogue d'accord existants pour la guitare cette application avait besoin d un manche animé ainsi que d'une lecture de son en fonction des cordes jouer et d'un système dynamique pour passer d'une manière d'afficher l'accord à une autre.",
+
+"Cg_Script_Title" : "Les scripts Json/After Effect",
+"Cg_Script_Intro" : "Afin de gagner du temps lors de la production, j'ai développé divers outils ",
+"Cg_Script_Path" : "Les guitaristes devaient créer une partition avec la nomenclature pensée au préalable, pour récupérer un fichier Xml qu'un premier script transforme en un fichier json plus lisible et maniable.\n Ce fichier Json pouvait ensuite servir à plusieurs services dans l'entreprise, soit agrémenté le cursus de l'application Ios ou bien les exercices du module de streak soit il était lancé dans un second script After Effect afin de pouvoir générer des vidéos, il y avait la possibilité de créer des vidéos pour les cours de Coachguitar ou bien des vidéos pour youtube comme ci-dessous",
+"Cg_Script_Apres_Video":"La gestion de cette chaîne de production à été très instructive sur la maintenance de divers outils et les échanges avec toutes les personnes qui les utilisaient, récuperer leurs besoins et modifier ces scripts afin de toujours plus réduire le temps de productions, étaient une tâche très valorisante.",
+"Cg_Script_Schema_1" : "Les guitaristes créés une partition avec la nomenclature pensée au préalable",
+"Cg_Script_Schema_2" : "On récupère un fichier Xml qu'un premier script transforme en un fichier json plus lisible et maniable.",
+"Cg_Script_Schema_3" : "Ce fichier Json peut ensuite servir à plusieurs services dans l'entreprise",
+"Cg_Script_Schema_4" : "Soit il agrémente le cursus de l'application Ios ou bien les exercices du module de streak ",
+"Cg_Script_Schema_5" : "Soit il est lancé dans un second script After Effect afin de pouvoir générer des vidéos",
+"Cg_Script_Schema_6" : "Il y a la possibilité de créer des vidéos pour les cours de Coachguitar ",
+"Cg_Script_Schema_7" : "Ou bien il peut générer des vidéos pour youtube comme ci-dessous",
+"Cg_Script_Schema_Placeholder_desktop" : "Schema interactif Hover sur les éléments pour voir leur description",
+"Cg_Script_Schema_Placeholder_mobile" : "Schema interactif Cliquez sur les éléments pour voir leur description"
+
+
+}

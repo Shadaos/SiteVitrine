@@ -10,7 +10,12 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src")
     }
-  }
+  },
+    css: {
+    postcss: {
+      config: './postcss.config.js',
+    },
+  },
 });
 
 

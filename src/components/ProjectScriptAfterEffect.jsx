@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import YouTube from 'react-youtube';
+import { t } from "i18next"
+import Schema from "./Schema";
 const MotionDiv = motion.div
 const MotionImg = motion.img
 
@@ -27,16 +29,54 @@ export const ProjectScriptAfterEffect = () => {
           {/*Name*/}
 
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            <span className="opacity-0 animate-fade-in">
-              Hi, i worked on a project name CoachTuner it s the main
-              application of ManoMaya{" "}
+            <span className="opacity-0 animate-fade-in font-Juno">
+              {t("Cg_Script_Title")}
             </span>
           </h1>
+
         </div>
       </div>
+
+            <div className="text-center mt-12 px-4 ">        
+        {t("Cg_Script_Intro")}
+      </div>
+
+                  {/* <MotionImg
+            className=" mx-auto"
+            src="../../Images/cycleScriptCoach.png"
+            alt="application"
+          /> */}
+      
+      {/* <div className="text-center mt-12 max-w-4xl px-4 py-6">
+        {t("Cg_Script_Path")}        
+      </div> */}
+
+<Schema />
+
+<div className="w-full max-w-4xl mx-auto aspect-video">
+  <YouTube
+    className="w-full h-full"
+    videoId="W3kclJnqkik"
+    opts={{
+      width: "100%",
+      height: "100%",
+      playerVars: {
+        autoplay: 0,
+      },
+    }}
+    onReady={onReady}
+  />
+</div>
+      {/* <YouTube className="mx-auto"  videoId="W3kclJnqkik" opts={opts} onReady={onReady} /> */}
+
+      <div className="text-center mt-12 max-w-4xl px-4">        
+        {t("Cg_Script_Apres_Video")}        
+      </div>
+
+
+            {/*
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <p className="text-lg md:text-lg text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-          Script gain de temps
         </p>
         <div className="grid grid-cols-1 gap-6">
 
@@ -44,10 +84,12 @@ export const ProjectScriptAfterEffect = () => {
         <p className="text-lg md:text-lg text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
           Cette vidéo a 1.4 millions de vue
         </p>
+                </div>
+      </div>
 
 
 
-            {/*
+
         <YouTubePlayer videoId="W3kclJnqkik" />
     <MotionDiv
       initial={{ opacity: 0 }}
@@ -94,18 +136,8 @@ onPlay={() => console.log("PLAY")}      />
       allow="autoplay; encrypted-media"
       allowFullScreen
     />
-
-              <MotionImg
-            src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3e/d4/15/3ed41513-b928-2e37-af3e-fa2b3660073e/US-Screenshot-2@3x.jpg/300x650bb.webp"
-            alt="application"
-                            initial="offscreen" 
-                whileInView="onscreen"
-                variants={cardVariants} 
-          />
             */              
             }
-        </div>
-      </div>
     </section>
   )
 }

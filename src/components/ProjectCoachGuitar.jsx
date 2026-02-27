@@ -1,5 +1,8 @@
 import { motion } from "motion/react"
 import AppIcon from "./AppIcon"
+import { t } from "i18next"
+import Carousel from "./Carousel"
+
 const cardVariants = {
   onscreen: {
     y: 0,
@@ -24,33 +27,47 @@ fetch("https://apps.apple.com/tn/app/guitar-tuner-easy-tune-chords/id838981369")
     console.log(iconUrl)
   })
 
+const slidesCG1 = [
+  "../../Images/coachg1.png",
+  "../../Images/coachg3.png",
+  "../../Images/coachg2.png",
+  "../../Images/coachg4.png",
+]
+const slidesCG2 = [
+  "../../Images/coachg5.png",
+  "../../Images/coachg9.png",
+  "../../Images/coachg8.png"
+]
+
 export const ProjectCoachGuitar = () => {
   return (
     <section
       id="ProjectCoachGuitar"
-      className="relative min-h-screen flex flex-col items-center justify-center px-4"
+      className="relative min-h-screen flex flex-col items-center justify-center px-4 py-8"
     >
       <div className="container max-w-4xl mx-auto z-10">
         <div className="space-y-6">
           {/*Name*/}
 
-          <MotionImg
-            className="img-icon "
-            src="../../Images/cg-logo-nav.svg"
-            alt="application"
-          />
+          <div className="relative flex justify-center items-center ">
 
+            <AppIcon className="absolute inset-0 flex justify-center items-center" appId="405338085" />
+            <MotionImg
+              className="size-64 p-8 "
+              src="../../Images/cg-logo-nav.svg"
+              alt="application"
+            />
+          </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-center">
-            <a className="title-cg"
+            <a className="title-cg font-Juno bold"
               href="https://apps.apple.com/tn/app/guitar-play-learn-chords/id405338085"
               target="_blank"
               rel="noopener noreferrer"
             >
-              CoachGuitar{" "}
+              {t("Cg_Title")}
             </a>
             <span className="opacity-0 animate-fade-in">
-              is the main application of Manomaya, with more than 20 millions of
-              download
+              {t("Cg_Description")}
             </span>
           </h1>
           <h2 className="text-2xl md:text-4xl tracking-tight">
@@ -64,27 +81,36 @@ export const ProjectCoachGuitar = () => {
             </ul>
           </h2>
 
-          <h2>
-            <span className="opacity-0 animate-fade-in">
-              The creation of the module cursus was a true challenge, nous avions besoin de deux manche de guitar animé en fonction des exercices demander l'un static et l autre dynamique0, des datas pour le suivis de l utilisateurs afin de pouvoir modifier le cursus et repondre au attente
-              de plus il a fallut penser a la gamification du cursus afin d avoir une meilleur retention cela c est traduit par un ajout d un arbre de skills et récompense a travers des badges et des chanson débloquer par rapport au niveau de l utilisateur ainsi que des exercices quotident lié a un systeme de streak
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+            <Carousel autoSlide={true} >
+              {[...slidesCG1.map((s) => (
+                <img src={s} />
+              ))]}
+            </Carousel>
+            <span className="opacity-0 animate-fade-in grid grid-cols-1 gap-6">
+              The creation of the module cursus was a true challenge, nous avions besoin de deux manche de guitar animé en fonction des exercices demander l'un static et l autre dynamique
             </span>
-          </h2>
-            <MotionImg
-              src="../../Images/coachg5.png"
-              alt="application"
-            />
-            <MotionImg
-              src="../../Images/coachg6.png"
-              alt="application"
-            />
-            <MotionImg
-              src="../../Images/coachg7.png"
-              alt="application"
-            />
+
+          </div>
+          <span></span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+            <span className="opacity-0 animate-fade-in grid grid-cols-1 gap-6">
+              De plus il a fallut penser a la gamification du cursus afin d avoir une meilleur retention cela c est traduit par un ajout d un arbre de skills et récompense a travers des badges
+            </span>
+
+            <Carousel
+              autoSlide={true} >
+              {[...slidesCG2.map((s) => (
+                <img src={s} />
+              ))]}
+            </Carousel>
+            <span className="opacity-0 animate-fade-in grid grid-cols-1 gap-6">
+              les datas du cusus et des chanson débloquer par rapport au niveau de l utilisateur ainsi que des exercices quotident lié a un systeme de streak            </span>
+
+          </div>
 
 
-          <AppIcon appId="405338085" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <MotionImg

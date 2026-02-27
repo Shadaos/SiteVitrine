@@ -1,12 +1,13 @@
 import { AboutSection } from "../components/AboutSection";
-import { HeroSection } from "../components/HeroSection";
+import { IntroSection } from "../components/IntroSection";
 import { Navbar } from "../components/Navbar";
 import { SkillsSection } from "../components/SkillsSection";
 import { ThemeToggle } from "../components/ThemeToggles";
+import { LanguageToggles } from "../components/LanguageToggles";
 
 /*
 const navItems = [
-    { name: "Home", href: "#hero" },
+    { name: "Home", href: "#intro" },
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
@@ -16,7 +17,7 @@ const navItems = [
 
 */
 const navItems = [
-    { name: "Home", href: "#hero" },
+    { name: "Home", href: "#intro" },
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" }
 ];
@@ -27,6 +28,7 @@ export const Home = () => {
 
         {/* Theme Toggle */}
         <ThemeToggle />
+        <LanguageToggles />
         {/* Background Effects */}
         {/*<StarBackground/> */}  
 
@@ -34,7 +36,7 @@ export const Home = () => {
         <Navbar items={navItems} />
         {/* Main Content */}
         <main>
-            <HeroSection/>  
+            <IntroSection/>  
             <AboutSection/>
             <SkillsSection/>
         </main>
